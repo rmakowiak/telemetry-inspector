@@ -18,7 +18,8 @@
     "build": "tsup",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "downloads": "./scripts/downloads.sh"
+    "downloads": "./scripts/downloads.sh",
+    "demo": "vhs demo/demo.tape"
   },
   "dependencies": {
     "ink": "^5.1.0",

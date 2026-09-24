@@ -12,6 +12,8 @@ It is not PostHog. Feature flags always report "nothing active", so the tool
 shows what n8n would send. It does not repeat the evaluation PostHog does on
 its own side.
 
+![telemetry-inspector in use](demo/demo.gif)
+
 ## Start it
 
 ```
@@ -168,7 +170,12 @@ npm install
 npm test          # 91 tests
 npm run typecheck
 npm run build     # writes dist/cli.js, which is committed
+npm run demo      # re-renders demo/demo.gif (needs vhs)
 ```
+
+`demo/demo.tape` records on port 19577 with its own log on purpose. With no
+`--port` the tool binds 19081, finds a real capture already there, attaches to
+it as a viewer, and puts real events into a published GIF.
 
 The fixtures under `tests/fixtures/` are invented, written by
 `scripts/make-fixtures.mjs`. They copy the shape of a real capture and none of
